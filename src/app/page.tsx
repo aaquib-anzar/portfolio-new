@@ -1,6 +1,7 @@
-import Hero from "@/app/components/Hero";
-import Main from "@/app/components/Main";
-import Contact from "@/app/components/Contact";
+import React from "react";
+import Hero from "./components/Hero";
+import Main from "./components/Main";
+import Contact from "./components/Contact";
 export default function HomePage() {
   return (
     <main className="pt-24">

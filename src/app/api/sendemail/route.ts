@@ -3,16 +3,7 @@ import nodemailer from "nodemailer"
 
 export async function POST(req:NextRequest){
     const{email, subject} = await req.json()
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-    if(!email || !subject) return NextResponse.json({message:"Missing required fields"},{status: 400})
-
-    const isValidEmail = emailRegex.test(email)
-    if(!isValidEmail){
-        return NextResponse.json({message:"Incorrect Email"})
-    }
-
+    
     try {
         const transporter = nodemailer.createTransport({
             service:"gmail",

@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./components/ui/theme-provider"
 import {Labrada} from "next/font/google"
 import Footer from "./components/Footer";
+import { ToastContainer} from 'react-toastify';
 
 const labrada = Labrada({ subsets: ["latin"]});
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             disableTransitionOnChange
           >
       <Navbar />
+      <ToastContainer position="top-right" />
       {children}
       <Footer />
       </ThemeProvider>

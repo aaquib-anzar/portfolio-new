@@ -1,15 +1,23 @@
 "use client"
 import React, { useState } from 'react'
+import { toast } from "react-toastify"
 
 function Contact() {
     const [email, setEmail] = useState("")
     const [subject, setSubject] = useState("")
-    const [success, setSuccess] = useState("")
-    const [error, setError] = useState("")
     const handleSubmit = (async (e: React.FormEvent) => {
         e.preventDefault()
-        setSuccess("")
-        setError("")
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !subject) {
+            toast.error("Missing fields")
+            return
+        }
+
+        const isValidEmail = emailRegex.test(email)
+        if (!isValidEmail) {
+            toast.error("Incorrect Email")
+            return
+        }
 
         try {
             const res = await fetch("/api/sendemail", {
@@ -17,17 +25,17 @@ function Contact() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, subject })
             })
-            const data = await res.json()
             if (res.ok) {
-                setSuccess(data.message)
+                toast.success("Email sent successfully")
                 setEmail("")
                 setSubject("")
             } else {
-                setError(data.message || "Something went wrong");
+                toast.error("Something went wrong");
 
             }
         } catch (err) {
-            setError("Network error or server not responding");
+            console.error("Network error or server not responding", err)
+            toast.error("Network error or server not responding");
         }
     })
     return (
@@ -75,8 +83,6 @@ function Contact() {
                 >
                     Send Message
                 </button>
-                {success && <p className="text-green-500 font-medium text-center">{success}</p>}
-                {error && <p className="text-red-500 font-medium text-center">{error}</p>}
             </form>
         </div>
 
