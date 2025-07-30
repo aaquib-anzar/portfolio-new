@@ -5,24 +5,24 @@ function Contact() {
     const [email, setEmail] = useState("")
     const [subject, setSubject] = useState("")
     const [success, setSuccess] = useState("")
-    const[error, setError] = useState("")
-    const handleSubmit = (async(e:React.FormEvent) => {
+    const [error, setError] = useState("")
+    const handleSubmit = (async (e: React.FormEvent) => {
         e.preventDefault()
         setSuccess("")
         setError("")
 
         try {
-            const res = await fetch("/api/sendemail",{
-                method:"POST",
-                headers:{'Content-Type': 'application/json'},
-                body:JSON.stringify({email, subject})
+            const res = await fetch("/api/sendemail", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, subject })
             })
             const data = await res.json()
-            if(res.ok){
+            if (res.ok) {
                 setSuccess(data.message)
                 setEmail("")
                 setSubject("")
-            }else{
+            } else {
                 setError(data.message || "Something went wrong");
 
             }
@@ -34,7 +34,7 @@ function Contact() {
         <div className="flex flex-col items-center justify-center px-4">
             {/* Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mt-20 mb-4 text-center">
-                Let's Connect
+                Let&apos;s Connect
             </h1>
             <p className="text-xl sm:text-2xl md:text-3xl font-medium mb-1">Have a Question?</p>
             <p className="text-xl sm:text-2xl md:text-3xl font-medium mb-6">Reach out via Email!</p>
@@ -75,6 +75,8 @@ function Contact() {
                 >
                     Send Message
                 </button>
+                {success && <p className="text-green-500 font-medium text-center">{success}</p>}
+                {error && <p className="text-red-500 font-medium text-center">{error}</p>}
             </form>
         </div>
 

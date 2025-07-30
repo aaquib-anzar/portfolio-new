@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6"
@@ -40,13 +40,13 @@ export default function Navbar() {
 
   {/* Center Socials */}
   <div className="flex items-center gap-4 border-x px-4 border-gray-600 dark:border-gray-600">
-    <a href="https://github.com/yourhandle" target="_blank">
+    <a href="https://github.com/aaquib-anzar" target="_blank">
       <FaGithub size={20} className="hover:text-blue-500" />
     </a>
     <a href="https://twitter.com/yourhandle" target="_blank">
       <FaXTwitter size={20} className="hover:text-blue-500" />
     </a>
-    <a href="https://linkedin.com/in/yourhandle" target="_blank">
+    <a href="https://linkedin.com/in/aaquib-anzar-519771170/" target="_blank">
       <FaLinkedin size={20} className="hover:text-blue-500" />
     </a>
   </div>

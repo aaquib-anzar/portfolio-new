@@ -1,9 +1,11 @@
 // app/layout.tsx
 import "./globals.css";
+import React from "react"
 import type { Metadata } from "next";
-import Navbar from "@/app/components/Navbar";
-import { ThemeProvider } from "@/app/components/ui/theme-provider"
+import Navbar from "./components/Navbar";
+import { ThemeProvider } from "./components/ui/theme-provider"
 import {Labrada} from "next/font/google"
+import Footer from "./components/Footer";
 
 const labrada = Labrada({ subsets: ["latin"]});
 export const metadata: Metadata = {
@@ -23,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           >
       <Navbar />
       {children}
+      <Footer />
       </ThemeProvider>
     </body>
     </html>
