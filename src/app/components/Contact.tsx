@@ -39,52 +39,54 @@ function Contact() {
         }
     })
     return (
-        <div className="flex flex-col items-center justify-center px-4">
-            {/* Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mt-20 mb-4 text-center">
-                Let&apos;s Connect
-            </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium mb-1">Have a Question?</p>
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium mb-6">Reach out via Email!</p>
+        <div className="max-w-6xl mx-auto px-4 py-16">
+            <div className="flex flex-col items-center text-center mb-10">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+                    Let&apos;s Connect
+                </h1>
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300">
+                    Have a Question? Reach out via Email!
+                </p>
+            </div>
 
-            {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="w-full max-w-lg space-y-4">
+            <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto space-y-6">
                 <div className="flex flex-col">
-                    <label htmlFor="email" className="mb-1 text-sm font-medium">
-                        Email
+                    <label htmlFor="email" className="mb-2 text-xl font-bold text-gray-800 dark:text-gray-200">
+                        Your Email
                     </label>
                     <input
                         id="email"
+                        type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your Email"
-                        className="px-4 py-2 border rounded-md bg-white dark:bg-neutral-800 border-gray-300 dark:border-gray-600 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        type="email"
+                        placeholder="Enter your email"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-neutral-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-black"
+                        required
                     />
                 </div>
-
                 <div className="flex flex-col">
-                    <label htmlFor="subject" className="mb-1 text-sm font-medium">
+                    <label htmlFor="subject" className="mb-2 text-xl font-bold text-gray-800 dark:text-gray-200">
                         Subject
                     </label>
                     <textarea
                         id="subject"
                         value={subject}
                         onChange={(e) => setSubject(e.target.value)}
-                        placeholder="Enter your subject"
-                        rows={4}
-                        className="px-4 py-2 border rounded-md bg-white dark:bg-neutral-800 border-gray-300 dark:border-gray-600 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
-                    />
+                        placeholder="Enter your message"
+                        rows={5}
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-neutral-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-black resize-none"
+                        required
+                    ></textarea>
                 </div>
-
                 <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition"
+                    className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold rounded-lg transition duration-300"
                 >
                     Send Message
                 </button>
             </form>
         </div>
+
 
     )
 }

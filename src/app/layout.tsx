@@ -10,7 +10,7 @@ import { ToastContainer} from 'react-toastify';
 
 const labrada = Labrada({ subsets: ["latin"]});
 export const metadata: Metadata = {
-  title: "Aaquib's Portfolio",
+  title: "Aaquib",
   description: "A personal portfolio built with Next.js",
 };
 

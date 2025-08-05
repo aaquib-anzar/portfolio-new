@@ -19,10 +19,10 @@ export function MagicCard({
   children,
   className,
   gradientSize = 200,
-  gradientColor = "#262626",
+  gradientColor = "#f2f7ff",
   gradientOpacity = 0.8,
-  gradientFrom = "#9E7AFF",
-  gradientTo = "#FE8BBB",
+  gradientFrom = "#e0e7ff",
+  gradientTo = "#fde2e4",
 }: MagicCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(-gradientSize);
@@ -32,8 +32,10 @@ export function MagicCard({
     (e: MouseEvent) => {
       if (cardRef.current) {
         const { left, top } = cardRef.current.getBoundingClientRect();
-        mouseX.set(e.clientX - left);
-        mouseY.set(e.clientY - top);
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
       }
     },
     [mouseX, mouseY],

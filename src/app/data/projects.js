@@ -21,18 +21,17 @@ export const projects = [
         live:"https://github.com/aaquib-anzar/Job_Board_frontend",
     },
     {
-        title:"URL-Shortner",
-        description:"A minimal and efficient URL shortener built with Node.js, Express, MongoDB, and EJS templating. Users can create short, shareable links that redirect to full URLs with tracking support.Clean UI built with EJS." ,
-        tech:["MongoDB", "Node.js", "Express", "EJS"],
-        github:"https://github.com/aaquib-anzar/URL_SHORTNER",
-        live:"https://url-shortner-y57u.onrender.com/",
-    },
-
-    {
         title:"Music-Academy",
         description:"Music Academy is a modern learning platform built with Next.js to explore music courses and tutorials. Designed with Aceternity UI, it features elegant animations, responsive design, and smooth navigation.",
         tech:["NextJS", "AcertinityUI"],
         github:"https://github.com/aaquib-anzar/Music_Academy",
         live:"https://music-academy-fawn-eta.vercel.app/",
     },
+    {
+        title:"URL-Shortner",
+        description:"A minimal and efficient URL shortener built with Node.js, Express, MongoDB, and EJS templating. Users can create short, shareable links that redirect to full URLs with tracking support.Clean UI built with EJS." ,
+        tech:["MongoDB", "Node.js", "Express", "EJS"],
+        github:"https://github.com/aaquib-anzar/URL_SHORTNER",
+        live:"https://url-shortner-y57u.onrender.com/",
+    }
 ]
