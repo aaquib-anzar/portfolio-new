@@ -2,7 +2,6 @@ import React from 'react'
 import { Project } from '@/app/types/project'
 import { FaGithub } from "react-icons/fa"
 import { CiGlobe } from "react-icons/ci"
-import { ShineBorder } from '@/components/magicui/shine-border'
 import { MagicCard } from '@/components/magicui/magic-card'
 function Card({ data }: { data: Project }) {
     return (

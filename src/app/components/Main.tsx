@@ -1,7 +1,6 @@
 import React from 'react'
 import Card from './ui/card'
 import { projects } from "../data/projects"
-import { MagicCard } from '@/components/magicui/magic-card';
 
 const techStack = ["React", "Redux", "Node.js", "Express.js", "Javascript", "Python", "MySQL", "MongoDB", "TailwindCSS", "C++"]
 
